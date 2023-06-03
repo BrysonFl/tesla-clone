@@ -31,6 +31,10 @@
 }
 
 @layer base {
+  :root {
+    --color-gray: rgb(23 26 32);
+  }
+
   * {
     margin: 0%;
     padding: 0%;

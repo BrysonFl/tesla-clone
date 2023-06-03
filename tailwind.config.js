@@ -5,6 +5,9 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
+    backgroundColor: {
+      'greyColor': 'rgba(var(--color-gray), 0.8)'
+    },
     fontFamily: {
       snas: ['Gotham SSm A', 'sans-serif']
     },

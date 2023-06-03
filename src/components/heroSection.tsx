@@ -1,20 +1,23 @@
+import { ReactElement } from "react"
 import { Button } from "./button"
+import { ButtonProperies } from "../interfaces/ButtonProperties"
 
 interface HeroProps {
   title?: string,
   description?: string,
-  isHero?: boolean,
-  srcImg?: string,
   isLink?: boolean,
-  colorHeader?: string
+  colorHeader?: string,
+  children: ReactElement,
+  textColor: string,
+  buttons: Array<ButtonProperies>
 }
 
-export const HeroSection:React.FC<HeroProps> = ({title, description, isHero, srcImg, isLink, colorHeader}) => {
+export const HeroSection:React.FC<HeroProps> = ({title, description, isLink, colorHeader, textColor, buttons, children}) => {
   return (
     <section id='landing-section' className='bg-black h-screen w-screen text-center relative overflow-hidden' data-header-color={colorHeader}>
       <div className='z-30 relative flex flex-col h-full'>
         <div>
-          <h2 className={`pt-40 text-[40px] font-medium ${isHero ? 'text-white' : 'text-black'}`}>{ title }</h2>
+          <h2 className={`pt-40 text-[40px] font-medium text-${textColor}`}>{ title }</h2>
 
           {
             isLink ?
@@ -22,22 +25,19 @@ export const HeroSection:React.FC<HeroProps> = ({title, description, isHero, src
                 <a className="underline text-sm" href="">{ description }</a>
               </p>
             :
-              <p className={`text-sm ${isHero ? 'text-white' : 'text-black'}`}>{ description }</p>
+              <p className={`text-sm text-${textColor}`}>{ description }</p>
           }
         </div>
 
-        <div className='flex flex-col flex-grow justify-end pb-24'>
-          <Button msg="Demo Drive" />
+        <div className='flex flex-grow items-end gap-4 justify-center pb-24'>
+          {
+            buttons.map(button => <Button text={button.text} bgColor={button.bgColor} textColor={button.textColor} />)
+          }
         </div>
       </div>
 
       <div className='absolute top-0 bottom-0 z-10 h-full w-full'>
-        {
-          isHero ?
-            <video className='object-cover h-full w-full' autoPlay muted loop src="/src/assets/Homepage-Test_Drive-NA-Desktop.webm"></video>
-          :
-            <img src={srcImg} alt="" />
-        }
+        { children }
       </div>
     </section>
   )
