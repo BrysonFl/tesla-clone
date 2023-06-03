@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn {
+  @apply rounded text-sm font-medium px-20 py-3;
+}
+
+.btn--primary {
+  @apply text-white border-2 backdrop-blur-lg border-white;
+}
+
+.btn--secundary {
+  @apply text-white backdrop-blur bg-primary;
+}
+
+.btn--third {
+  @apply text-black backdrop-blur bg-secundary;
+}

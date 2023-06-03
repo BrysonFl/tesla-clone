@@ -1,5 +1,5 @@
 export interface ButtonProperies {
-  bgColor: string,
+  isPrimary?: boolean,
+  isSecundary?: boolean,
   text: string,
-  textColor: string
 }

@@ -31,7 +31,7 @@ export const HeroSection:React.FC<HeroProps> = ({title, description, isLink, col
 
         <div className='flex flex-grow items-end gap-4 justify-center pb-24'>
           {
-            buttons.map(button => <Button text={button.text} bgColor={button.bgColor} textColor={button.textColor} />)
+            buttons.map(button => <Button text={button.text} isPrimary={button.isPrimary} isSecundary={button.isSecundary} />)
           }
         </div>
       </div>

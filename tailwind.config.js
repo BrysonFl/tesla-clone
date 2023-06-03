@@ -1,12 +1,17 @@
 /** @type {import('tailwindcss').Config} */
+
+import colors from 'tailwindcss/colors';
+
 export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
-    backgroundColor: {
-      'greyColor': 'rgba(var(--color-gray), 0.8)'
+    colors: {
+      ...colors,
+      'primary': 'var(--color-gray)',
+      'secundary': 'var(--color-white)'
     },
     fontFamily: {
       snas: ['Gotham SSm A', 'sans-serif']
