@@ -67,11 +67,16 @@ export const Header = () => {
         </ul>
       </nav>
 
-      <div id='menu-backdrop' className={
-        `absolute top-0 left-0 bg-black/5 backdrop-blur-lg rounded translate-x-[var(--left)] translate-y-[var(--top)] w-[var(--width)] h-[var(--height)] transition-all duration-300 ease-in-out opacity-0 -z-10`
-      }>
-
-      </div>
+      <div id='menu-backdrop' className="
+        absolute
+        top-0 left-0
+        bg-black/5
+        backdrop-blur-lg
+        rounded
+        translate-x-[var(--left)] translate-y-[var(--top)] w-[var(--width)] h-[var(--height)]
+        transition-all duration-300 ease-in-out
+        opacity-0 -z-10"
+      ></div>
     </header>
   );
 }

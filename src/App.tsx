@@ -13,7 +13,7 @@ function App() {
             {
               text: 'Demo Drive',
               textColor: 'white',
-              bgColor: 'transparent'
+              bgColor: 'white'
             }
           ]}>
             <video className='object-cover h-full w-full' autoPlay muted loop src="/src/assets/Homepage-Test_Drive-NA-Desktop.webm"></video>
